@@ -1,11 +1,12 @@
 name: FractalForest
-version: 1.11.2
+version: 1.12
 main: com.eclipsekingdom.fractalforest.FractalForest
-api-version: 1.13
+api-version: 1.17
 authors: [sword7]
+maintainer: Diamondback88
 description: A spigot plugin that adds procedurally generated trees to Minecraft
 website: eclipsekingdom.com
-softdepend: [PlayerPlot, WorldGuard, RedProtect, Towny, CoreProtect, GriefPrevention, Residence, Civs]
+softdepend: [PlayerPlot, WorldGuard, RedProtect, Towny, CoreProtect, GriefPrevention, Residence, Civs, LandsAPI]
 load: POSTWORLD
 
 commands:

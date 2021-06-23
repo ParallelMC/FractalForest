@@ -1,3 +1,4 @@
+// REIMPLEMENT LANDS INTEGRATION
 package com.eclipsekingdom.fractalforest.protection;
 
 import com.eclipsekingdom.fractalforest.FractalForest;
@@ -43,11 +44,11 @@ public class RegionValidation {
                 regionProtectors.add(new GriefPreventionProtection(plugin));
             } else if (name.equals(PluginBase.residenceNameSpace)) {
                 regionProtectors.add(new ResidenceProtection(plugin));
-            } else if (name.equals(PluginBase.landsNameSpace)) {
-                this.landsAddon = new LandsIntegration(FractalForest.getPlugin(), false);
-                this.landsKey = landsAddon.initialize();
-                regionProtectors.add(new LandsProtection(landsAddon));
-                usingLands = true;
+            //} else if (name.equals(PluginBase.landsNameSpace)) {
+              //  this.landsAddon = new LandsIntegration(FractalForest.getPlugin(), false);
+              //  this.landsKey = landsAddon.initialize();
+              //  regionProtectors.add(new LandsProtection(landsAddon));
+              //  usingLands = true;
             } else if (name.equals(PluginBase.civsNameSpace)) {
                 regionProtectors.add(new CivsProtection());
             }

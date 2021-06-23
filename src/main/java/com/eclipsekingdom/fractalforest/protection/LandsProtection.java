@@ -1,3 +1,4 @@
+/*
 package com.eclipsekingdom.fractalforest.protection;
 
 import me.angeschossen.lands.api.integration.LandsIntegration;
@@ -24,3 +25,4 @@ public class LandsProtection implements IRegionProtector {
         }
     }
 }
+*/
