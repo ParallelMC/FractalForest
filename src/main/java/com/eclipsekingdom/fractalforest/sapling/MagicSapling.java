@@ -59,6 +59,7 @@ public class MagicSapling extends BukkitRunnable {
             materials.add(XMaterial.OAK_SAPLING.parseMaterial());
             materials.add(XMaterial.OBSIDIAN.parseMaterial());
             materials.add(XMaterial.CHORUS_PLANT.parseMaterial());
+            materials.add(XMaterial.SEAGRASS.parseMaterial());
             materials.add(Material.valueOf("NETHER_STALK"));
             materials.add(Material.valueOf("NETHER_WARTS"));
         } else {
@@ -71,6 +72,7 @@ public class MagicSapling extends BukkitRunnable {
             materials.add(XMaterial.NETHER_WART.parseMaterial());
             materials.add(XMaterial.OBSIDIAN.parseMaterial());
             materials.add(XMaterial.CHORUS_PLANT.parseMaterial());
+            materials.add(XMaterial.SEAGRASS.parseMaterial());
         }
         return materials;
     }

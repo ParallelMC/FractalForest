@@ -14,7 +14,7 @@ public enum FSapling {
     DARK_OAK_SAPLING(XMaterial.DARK_OAK_SAPLING, 5),
     NETHER_WART(XMaterial.NETHER_WART),
     CHORUS(XMaterial.CHORUS_PLANT, XMaterial.OBSIDIAN),
-
+    SEAGRASS(XMaterial.SEAGRASS, XMaterial.SAND)
     ;
 
     private static boolean legacy = Version.current.value <= 112;

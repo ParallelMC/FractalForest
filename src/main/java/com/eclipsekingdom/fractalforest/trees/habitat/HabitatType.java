@@ -4,6 +4,7 @@ public enum HabitatType {
     FOREST(new Forest()),
     NETHER(new Nether()),
     END(new End()),
+    UNDERWATER(new Underwater()),
     ;
 
     private IHabitat habitat;
