@@ -35,27 +35,27 @@ import static com.eclipsekingdom.fractalforest.sys.language.Message.LABEL_SAPLIN
 import static com.eclipsekingdom.fractalforest.sys.language.Message.LABEL_SPECIES;
 
 public class Species {
-    public static Species MAGNOLIA = new Species("Magnolia", Scale.SMALL, GenomeType.MAGNOLIA.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
-    public static Species BUCK_EYE = new Species("Buck Eye", Scale.MEDIUM, GenomeType.BUCK_EYE.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
-    public static Species FLOWERING_HAWTHORN = new Species("Flowering Hawthorn", Scale.MEDIUM, GenomeType.BUCK_EYE.value(), FSapling.OAK_SAPLING, ThemeType.FLOWERING_HAWTHORN.getTheme());
-    public static Species OAK = new Species("Oak", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
-    public static Species ELM = new Species("Elk", Scale.MASSIVE, GenomeType.ELM.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
-    public static Species BIRCH = new Species("Birch", Scale.BIG, GenomeType.BIRCH.value(), FSapling.BIRCH_SAPLING, ThemeType.BIRCH.getTheme());
-    public static Species FALL_BIRCH = new Species("Fall Birch", Scale.BIG, GenomeType.BIRCH.value(), FSapling.BIRCH_SAPLING, ThemeType.FALL_BIRCH.getTheme());
-    public static Species FALL_OAK = new Species("Fall Oak", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.FALL_OAK.getTheme());
-    public static Species FALL_ELM = new Species("Fall Elm", Scale.MASSIVE, GenomeType.ELM.value(), FSapling.OAK_SAPLING, ThemeType.FALL_ELM.getTheme());
-    public static Species FALL_MAPLE = new Species("Fall Maple", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.FALL_MAPLE.getTheme());
-    public static Species WEIRWOOD = new Species("Weirwood", Scale.MASSIVE, GenomeType.WEIRWOOD.value(), FSapling.BIRCH_SAPLING, ThemeType.WEIRWOOD.getTheme());
-    public static Species WHITE_ASH = new Species("White Ash", Scale.BIG, GenomeType.WHITE_ASH.value(), FSapling.ACACIA_SAPLING, ThemeType.WHITE_ASH.getTheme());
-    public static Species NARROW_LEAF_ASH = new Species("Narrow Leaf Ash", Scale.BIG, GenomeType.NARROW_LEAF_ASH.value(), FSapling.ACACIA_SAPLING, ThemeType.WHITE_ASH.getTheme());
-    public static Species SHANTUNG_MAPLE = new Species("Shatung Maple", Scale.MASSIVE, GenomeType.SHANTUNG_MAPLE.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
-    public static Species HICKORY = new Species("Hickory", Scale.BIG, GenomeType.HICKORY.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species MAGNOLIA = new Species("MAGNOLIA", Scale.SMALL, GenomeType.MAGNOLIA.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species BUCK_EYE = new Species("BUCK_EYE", Scale.MEDIUM, GenomeType.BUCK_EYE.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species FLOWERING_HAWTHORN = new Species("FLOWERING_HAWTHORN", Scale.MEDIUM, GenomeType.BUCK_EYE.value(), FSapling.OAK_SAPLING, ThemeType.FLOWERING_HAWTHORN.getTheme());
+    public static final Species OAK = new Species("OAK", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species ELM = new Species("ELM", Scale.MASSIVE, GenomeType.ELM.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species BIRCH = new Species("BIRCH", Scale.BIG, GenomeType.BIRCH.value(), FSapling.BIRCH_SAPLING, ThemeType.BIRCH.getTheme());
+    public static final Species FALL_BIRCH = new Species("FALL_BIRCH", Scale.BIG, GenomeType.BIRCH.value(), FSapling.BIRCH_SAPLING, ThemeType.FALL_BIRCH.getTheme());
+    public static final Species FALL_OAK = new Species("FALL_OAK", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.FALL_OAK.getTheme());
+    public static final Species FALL_ELM = new Species("FALL_ELM", Scale.MASSIVE, GenomeType.ELM.value(), FSapling.OAK_SAPLING, ThemeType.FALL_ELM.getTheme());
+    public static final Species FALL_MAPLE = new Species("FALL_MAPLE", Scale.MASSIVE, GenomeType.OAK.value(), FSapling.OAK_SAPLING, ThemeType.FALL_MAPLE.getTheme());
+    public static final Species WEIRWOOD = new Species("WEIRWOOD", Scale.MASSIVE, GenomeType.WEIRWOOD.value(), FSapling.BIRCH_SAPLING, ThemeType.WEIRWOOD.getTheme());
+    public static final Species WHITE_ASH = new Species("WHITE_ASH", Scale.BIG, GenomeType.WHITE_ASH.value(), FSapling.ACACIA_SAPLING, ThemeType.WHITE_ASH.getTheme());
+    public static final Species NARROW_LEAF_ASH = new Species("NARROW_LEAF_ASH", Scale.BIG, GenomeType.NARROW_LEAF_ASH.value(), FSapling.ACACIA_SAPLING, ThemeType.WHITE_ASH.getTheme());
+    public static final Species SHANTUNG_MAPLE = new Species("SHANTUNG_MAPLE", Scale.MASSIVE, GenomeType.SHANTUNG_MAPLE.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
+    public static final Species HICKORY = new Species("HICKORY", Scale.BIG, GenomeType.HICKORY.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
 
-    public static Species BLOOD_BUSH = new Species("Blood Bush", Scale.SMALL, GenomeType.BLOOD_BUSH.value(), FSapling.NETHER_WART, ThemeType.BLOOD_BUSH.getTheme(), HabitatType.NETHER.getHabitat(), EffectType.NETHER.getEffects());
-    public static Species FLAME_TREE = new Species("Flame Tree", Scale.MEDIUM, GenomeType.FLAME_TREE.value(), FSapling.NETHER_WART, ThemeType.FLAME_TREE.getTheme(), HabitatType.NETHER.getHabitat(), EffectType.NETHER.getEffects());
+    public static final Species BLOOD_BUSH = new Species("BLOOD_BUSH", Scale.SMALL, GenomeType.BLOOD_BUSH.value(), FSapling.NETHER_WART, ThemeType.BLOOD_BUSH.getTheme(), HabitatType.NETHER.getHabitat(), EffectType.NETHER.getEffects());
+    public static final Species FLAME_TREE = new Species("FLAME_TREE", Scale.MEDIUM, GenomeType.FLAME_TREE.value(), FSapling.NETHER_WART, ThemeType.FLAME_TREE.getTheme(), HabitatType.NETHER.getHabitat(), EffectType.NETHER.getEffects());
 
-    public static Species CYGNI = new Species("Cygni", Scale.MEDIUM, GenomeType.CYGNI.value(), FSapling.CHORUS, ThemeType.CYGNI.getTheme(), HabitatType.END.getHabitat(), EffectType.END.getEffects());
-    public static Species SECCHI = new Species("Secchi", Scale.SMALL, GenomeType.SECCHI.value(), FSapling.CHORUS, ThemeType.SECCHI.getTheme(), HabitatType.END.getHabitat(), EffectType.END.getEffects());
+    public static final Species CYGNI = new Species("CYGNI", Scale.MEDIUM, GenomeType.CYGNI.value(), FSapling.CHORUS, ThemeType.CYGNI.getTheme(), HabitatType.END.getHabitat(), EffectType.END.getEffects());
+    public static final Species SECCHI = new Species("SECCHI", Scale.SMALL, GenomeType.SECCHI.value(), FSapling.CHORUS, ThemeType.SECCHI.getTheme(), HabitatType.END.getHabitat(), EffectType.END.getEffects());
 
 
     private Scale scale;
@@ -89,6 +89,7 @@ public class Species {
     }
 
     private void init(String name, Scale scale, IGenome genome, FSapling fSapling, ITheme theme, IHabitat habitat, IEffects effects) {
+        this.name = name;
         this.scale = scale;
         this.growthPattern = new FractalGrowthPattern(genome);
         this.fSapling = fSapling;
@@ -139,6 +140,7 @@ public class Species {
     }
 
     public static Species from(String string) {
+
         for (Species species : values()) {
             if (species.toString().equalsIgnoreCase(string)) {
                 return species;
