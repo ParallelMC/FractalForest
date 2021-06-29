@@ -34,6 +34,10 @@ import java.util.List;
 import static com.eclipsekingdom.fractalforest.sys.language.Message.LABEL_SAPLING;
 import static com.eclipsekingdom.fractalforest.sys.language.Message.LABEL_SPECIES;
 
+/**
+ * This class represents a specific Species of sapling.
+ * This used to be an enum, but was converted into a class to allow other plugins to add custom species
+ */
 public class Species {
     public static final Species MAGNOLIA = new Species("MAGNOLIA", Scale.SMALL, GenomeType.MAGNOLIA.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
     public static final Species BUCK_EYE = new Species("BUCK_EYE", Scale.MEDIUM, GenomeType.BUCK_EYE.value(), FSapling.OAK_SAPLING, ThemeType.OAK.getTheme());
@@ -160,7 +164,12 @@ public class Species {
 
     private static boolean initializedStaticVals = false;
 
+    /**
+     * Returns an array of all registered species
+     * @return An array of all registered species
+     */
     public static Species[] values() {
+        // This block automatically takes all of the static values and adds them to the species hashmap.
         if (!initializedStaticVals) {
             Species blankSpecies = new Species();
 
@@ -180,6 +189,10 @@ public class Species {
         return species.values().toArray(new Species[0]);
     }
 
+    /**
+     * Adds a new species to the map
+     * @param newSpecies The new species to add
+     */
     public static void addSpecies(Species newSpecies) {
         species.put(newSpecies.name(), newSpecies);
     }
