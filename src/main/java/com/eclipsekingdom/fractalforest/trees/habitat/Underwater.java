@@ -28,6 +28,10 @@ public class Underwater implements IHabitat {
 			.add(XMaterial.GRAVEL.parseMaterial())
 			.add(XMaterial.SAND.parseMaterial())
 			.add(XMaterial.CLAY.parseMaterial())
+			.add(XMaterial.STONE.parseMaterial())
+			.add(XMaterial.DIORITE.parseMaterial())
+			.add(XMaterial.ANDESITE.parseMaterial())
+			.add(XMaterial.GRANITE.parseMaterial())
 			.build();
 
 

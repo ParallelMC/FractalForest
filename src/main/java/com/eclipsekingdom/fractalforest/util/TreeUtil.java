@@ -47,7 +47,6 @@ public class TreeUtil {
     public static HashSet<Material> createPassableSet() {
         HashSet<Material> passableSet = new HashSet<>();
         passableSet.add(XMaterial.AIR.parseMaterial());
-        passableSet.add(XMaterial.WATER.parseMaterial());
         passableSet.add(XMaterial.GRASS.parseMaterial());
         passableSet.add(XMaterial.OAK_SAPLING.parseMaterial());
         passableSet.add(XMaterial.SPRUCE_SAPLING.parseMaterial());
@@ -81,6 +80,11 @@ public class TreeUtil {
         passableSet.add(XMaterial.SWEET_BERRY_BUSH.parseMaterial());
         passableSet.add(XMaterial.SUGAR_CANE.parseMaterial());
         passableSet.add(XMaterial.SNOW.parseMaterial());
+
+        passableSet.add(XMaterial.WATER.parseMaterial());
+        passableSet.add(XMaterial.KELP_PLANT.parseMaterial());
+        passableSet.add(XMaterial.KELP.parseMaterial());
+        passableSet.add(XMaterial.SEAGRASS.parseMaterial());
 
         return passableSet;
     }
