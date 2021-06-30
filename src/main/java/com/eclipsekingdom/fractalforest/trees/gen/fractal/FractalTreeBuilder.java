@@ -240,7 +240,7 @@ public class FractalTreeBuilder extends Tree {
     private void attemptLeaf(Vector current) {
         Location location = current.toLocation(world);
         Block target = location.getBlock();
-        if (target.isEmpty() || (target.isLiquid() && target.getType().equals(Material.WATER)) || selfMaterial.contains(target.getType())) {
+        if (target.isEmpty() || target.getType().equals(Material.WATER) || selfMaterial.contains(target.getType())) {
             if (hasPlanter()) {
                 Player planter = getPlanter();
                 if (RegionValidation.isValidLocation(planter, location)) {

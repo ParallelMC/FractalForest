@@ -4,36 +4,35 @@ import com.eclipsekingdom.fractalforest.sys.Version;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public enum FSapling {
+public class FSapling {
 
-    OAK_SAPLING(XMaterial.OAK_SAPLING, 0),
-    SPRUCE_SAPLING(XMaterial.SPRUCE_SAPLING, 1),
-    BIRCH_SAPLING(XMaterial.BIRCH_SAPLING, 2),
-    JUNGLE_SAPLING(XMaterial.JUNGLE_SAPLING, 3),
-    ACACIA_SAPLING(XMaterial.ACACIA_SAPLING, 4),
-    DARK_OAK_SAPLING(XMaterial.DARK_OAK_SAPLING, 5),
-    NETHER_WART(XMaterial.NETHER_WART),
-    CHORUS(XMaterial.CHORUS_PLANT, XMaterial.OBSIDIAN),
-    SEAGRASS(XMaterial.SEAGRASS, XMaterial.SAND)
-    ;
+    public static final FSapling OAK_SAPLING = new FSapling(XMaterial.OAK_SAPLING, 0);
+    public static final FSapling SPRUCE_SAPLING = new FSapling(XMaterial.SPRUCE_SAPLING, 1);
+    public static final FSapling BIRCH_SAPLING = new FSapling(XMaterial.BIRCH_SAPLING, 2);
+    public static final FSapling JUNGLE_SAPLING = new FSapling(XMaterial.JUNGLE_SAPLING, 3);
+    public static final FSapling ACACIA_SAPLING = new FSapling(XMaterial.ACACIA_SAPLING, 4);
+    public static final FSapling DARK_OAK_SAPLING = new FSapling(XMaterial.DARK_OAK_SAPLING, 5);
+    public static final FSapling NETHER_WART = new FSapling(XMaterial.NETHER_WART);
+    public static final FSapling CHORUS = new FSapling(XMaterial.CHORUS_PLANT, XMaterial.OBSIDIAN);
+    public static final FSapling SEAGRASS = new FSapling(XMaterial.SEAGRASS, XMaterial.SAND);
 
     private static boolean legacy = Version.current.value <= 112;
 
     private Material material;
     private byte aByte;
 
-    FSapling(XMaterial material, XMaterial backup) {
+    public FSapling(XMaterial material, XMaterial backup) {
         Material matOne = material.parseMaterial();
         this.material = matOne == null? backup.parseMaterial() : matOne;
         aByte = -1;
     }
 
-    FSapling(XMaterial material) {
+    public FSapling(XMaterial material) {
         this.material = material.parseMaterial();
         aByte = -1;
     }
 
-    FSapling(XMaterial material, int aByte) {
+    public FSapling(XMaterial material, int aByte) {
         this.material = material.parseMaterial();
         this.aByte = (byte) aByte;
     }
@@ -46,4 +45,4 @@ public enum FSapling {
         }
     }
 
-    }
+}
