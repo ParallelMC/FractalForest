@@ -26,6 +26,8 @@ public final class FractalForest extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
+        System.out.println(Version.current.value);
+
         ConfigLoader.load();
         new PluginConfig();
         PluginBase pluginBase = new PluginBase();

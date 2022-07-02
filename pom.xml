@@ -6,7 +6,7 @@
 
     <groupId>com.eclipsekingdom</groupId>
     <artifactId>FractalForest</artifactId>
-    <version>1.13</version>
+    <version>1.14</version>
     <packaging>jar</packaging>
 
     <name>FractalForest</name>
@@ -69,7 +69,7 @@
         </repository>
         <repository>
             <id>coreprotect-repo</id>
-            <url>http://maven.playpro.com/</url>
+            <url>https://maven.playpro.com/</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
@@ -85,19 +85,19 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.18-R0.1-SNAPSHOT</version>
+            <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
             <artifactId>worldguard-bukkit</artifactId>
-            <version>7.0.6</version>
+            <version>7.0.7</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.coreprotect</groupId>
             <artifactId>coreprotect</artifactId>
-            <version>20.1</version>
+            <version>21.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
