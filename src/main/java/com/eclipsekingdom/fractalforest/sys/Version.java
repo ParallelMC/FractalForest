@@ -30,6 +30,7 @@ public enum Version {
 
     private static Version getVersion() {
         String versionString = Bukkit.getVersion();
+        System.out.println("Bukkit Version: " + versionString);
         if (versionString.contains("1.20")) {
             return V1_20;
         } else if (versionString.contains("1.19")) {

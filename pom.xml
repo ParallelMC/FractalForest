@@ -6,7 +6,7 @@
 
     <groupId>com.eclipsekingdom</groupId>
     <artifactId>FractalForest</artifactId>
-    <version>1.15</version>
+    <version>1.15.1</version>
     <packaging>jar</packaging>
 
     <name>FractalForest</name>
