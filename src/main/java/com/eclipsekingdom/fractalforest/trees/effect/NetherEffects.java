@@ -31,11 +31,11 @@ public class NetherEffects implements IEffects {
                     double offX = TreeMath.randomDouble(-0.5, 0.5);
                     double offY = TreeMath.randomDouble(-0.7, 0.7);
                     double offZ = TreeMath.randomDouble(-0.5, 0.5);
-                    location.getWorld().spawnParticle(Particle.REDSTONE, location.getX() + offX, location.getY() + offY, location.getZ() + offZ, 0, 255, 0, 0, 1);
+                    location.getWorld().spawnParticle(Particle.DUST, location.getX() + offX, location.getY() + offY, location.getZ() + offZ, 0, 255, 0, 0, 1);
                 }
             }
         } else {
-            location.getWorld().spawnParticle(Particle.REDSTONE, location, 7, 0.5, 0.7, 0.5, new Particle.DustOptions(Color.RED, 0.77f));
+            location.getWorld().spawnParticle(Particle.DUST, location, 7, 0.5, 0.7, 0.5, new Particle.DustOptions(Color.RED, 0.77f));
         }
     }
 

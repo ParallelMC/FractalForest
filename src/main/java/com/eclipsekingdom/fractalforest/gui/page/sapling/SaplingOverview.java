@@ -35,7 +35,7 @@ public class SaplingOverview implements PageContents {
             if (speciesIndex < species.length) {
                 ItemStack itemStack = species[speciesIndex].getSapling();
                 ItemMeta meta = itemStack.getItemMeta();
-                meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+                meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
                 itemStack.setItemMeta(meta);
                 menu.setItem(index, itemStack);
             } else {
@@ -60,7 +60,7 @@ public class SaplingOverview implements PageContents {
         } else {
             ItemStack itemStack = menu.getItem(slot).clone();
             ItemMeta meta = itemStack.getItemMeta();
-            meta.removeItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+            meta.removeItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             itemStack.setItemMeta(meta);
             if (itemStack != null && MagicSapling.saplingMaterials.contains(itemStack.getType())) {
                 ItemStack cursor = player.getItemOnCursor();

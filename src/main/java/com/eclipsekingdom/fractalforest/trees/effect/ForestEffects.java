@@ -30,7 +30,7 @@ public class ForestEffects implements IEffects {
                 location.getWorld().playEffect(location.clone().add(offX, offY, offZ), Effect.valueOf("HAPPY_VILLAGER"), 1);
             }
         } else {
-            location.getWorld().spawnParticle(Particle.VILLAGER_HAPPY, location, 7, 0.5, 0.7, 0.5);
+            location.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, location, 7, 0.5, 0.7, 0.5);
         }
     }
 }

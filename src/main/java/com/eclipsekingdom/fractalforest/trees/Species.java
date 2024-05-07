@@ -113,7 +113,7 @@ public class Species {
         ItemStack itemStack = fSapling.getItemStack();
         ItemMeta meta = itemStack.getItemMeta();
         meta.setDisplayName(ChatColor.GREEN + formattedName + " " + LABEL_SAPLING);
-        meta.addEnchant(Enchantment.DURABILITY, 1, true);
+        meta.addEnchant(Enchantment.UNBREAKING, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         ArrayList<String> lore = new ArrayList<>();
         lore.add(ChatColor.DARK_GREEN + LABEL_SPECIES.toString() + ": " + ChatColor.GRAY + species);
