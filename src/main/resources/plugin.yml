@@ -1,7 +1,7 @@
 name: FractalForest
 version: 1.15.2
 main: com.eclipsekingdom.fractalforest.FractalForest
-api-version: "1.20.6"
+api-version: "1.20.5"
 authors: [sword7]
 maintainer: Diamondback88, UnknownSilicon
 description: A spigot plugin that adds procedurally generated trees to Minecraft
