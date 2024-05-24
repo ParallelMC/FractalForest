@@ -6,7 +6,7 @@
 
     <groupId>com.eclipsekingdom</groupId>
     <artifactId>FractalForest</artifactId>
-    <version>1.15.2</version>
+    <version>1.16.0</version>
     <packaging>jar</packaging>
 
     <name>FractalForest</name>
@@ -139,27 +139,6 @@
             <artifactId>LandsAPI</artifactId>
             <version>5.10.2</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.eclipsekingdom</groupId>
-            <artifactId>PlayerPlot</artifactId>
-            <version>1.19.2</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/PLayerPlot.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.bekvon</groupId>
-            <artifactId>Residence</artifactId>
-            <version>5.0.0.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/Residence5.0.0.0.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.redcastlemedia.multitallented</groupId>
-            <artifactId>civs</artifactId>
-            <version>1.9.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/civs-1.9.3.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

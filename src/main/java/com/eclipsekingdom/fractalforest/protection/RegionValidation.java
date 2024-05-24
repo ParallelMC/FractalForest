@@ -4,6 +4,7 @@ package com.eclipsekingdom.fractalforest.protection;
 import com.eclipsekingdom.fractalforest.FractalForest;
 import com.eclipsekingdom.fractalforest.sys.PluginBase;
 import me.angeschossen.lands.api.integration.LandsIntegration;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -33,7 +34,8 @@ public class RegionValidation {
         for (String name : map.keySet()) {
             Plugin plugin = map.get(name);
             if (name.equals(PluginBase.playerPlotNameSpace)) {
-                regionProtectors.add(new PlayerPlotProtection(plugin));
+                //regionProtectors.add(new PlayerPlotProtection(plugin));
+                Bukkit.getLogger().warning("Player Plot integration not implemented!");
             } else if (name.equals(PluginBase.redProtectNameSpace)) {
                 regionProtectors.add(new RedProtectProtection(plugin));
             } else if (name.equals(PluginBase.worldGuardNameSpace)) {
@@ -43,14 +45,14 @@ public class RegionValidation {
             } else if (name.equals(PluginBase.griefPreventionNameSpace)) {
                 regionProtectors.add(new GriefPreventionProtection(plugin));
             } else if (name.equals(PluginBase.residenceNameSpace)) {
-                regionProtectors.add(new ResidenceProtection(plugin));
+                Bukkit.getLogger().warning("Residence integration not implemented!");
             //} else if (name.equals(PluginBase.landsNameSpace)) {
               //  this.landsAddon = new LandsIntegration(FractalForest.getPlugin(), false);
               //  this.landsKey = landsAddon.initialize();
               //  regionProtectors.add(new LandsProtection(landsAddon));
               //  usingLands = true;
             } else if (name.equals(PluginBase.civsNameSpace)) {
-                regionProtectors.add(new CivsProtection());
+                Bukkit.getLogger().warning("Civs integration not implemented!");
             }
         }
     }
