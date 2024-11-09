@@ -2,7 +2,10 @@ package com.eclipsekingdom.fractalforest.sys;
 
 import org.bukkit.Bukkit;
 
+// probably should get rid of this at some point
+
 public enum Version {
+    V1_21(121),
     V1_20(120),
     V1_19(119),
     V1_18(118),
@@ -31,7 +34,9 @@ public enum Version {
     private static Version getVersion() {
         String versionString = Bukkit.getVersion();
         System.out.println("Bukkit Version: " + versionString);
-        if (versionString.contains("1.20")) {
+        if (versionString.contains("1.21")) {
+            return V1_21;
+        } else if (versionString.contains("1.20")) {
             return V1_20;
         } else if (versionString.contains("1.19")) {
           return V1_19;
