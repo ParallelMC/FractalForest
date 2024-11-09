@@ -28,10 +28,8 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.text.WordUtils;
-import org.bukkit.Instrument;
-import org.bukkit.Location;
-import org.bukkit.Note;
-import org.bukkit.Sound;
+import org.bukkit.*;
+import org.bukkit.block.Biome;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -894,7 +892,12 @@ public enum XSound {
      */
     public static final EnumSet<XSound> VALUES = EnumSet.allOf(XSound.class);
 
-    private static final Cache<XSound, com.google.common.base.Optional<Sound>> CACHE = CacheBuilder.newBuilder()
+//    private static final Cache<XSound, com.google.common.base.Optional<Sound>> CACHE = CacheBuilder.newBuilder()
+//            .expireAfterAccess(10, TimeUnit.MINUTES)
+//            .softValues()
+//            .build();
+
+    private static final Cache<XSound, Sound> CACHE = CacheBuilder.newBuilder()
             .expireAfterAccess(10, TimeUnit.MINUTES)
             .softValues()
             .build();
@@ -1089,24 +1092,43 @@ public enum XSound {
     @Nullable
     @SuppressWarnings({"Guava", "OptionalAssignedToNull"})
     public Sound parseSound() {
-        com.google.common.base.Optional<Sound> cachedSound = CACHE.getIfPresent(this);
-        if (cachedSound != null) return cachedSound.orNull();
-        com.google.common.base.Optional<Sound> sound;
+        // com.google.common.base.Optional<Sound> cachedSound = CACHE.getIfPresent(this);
+        Sound cachedSound = CACHE.getIfPresent(this);
+        // if (cachedSound != null) return cachedSound.orNull();
+        if (cachedSound != null) return cachedSound;
+        // com.google.common.base.Optional<Sound> sound;
 
         // Since Sound class doesn't have a getSound() method we'll use Guava so
         // it can cache it for us.
-        sound = Enums.getIfPresent(Sound.class, this.name());
 
-        if (!sound.isPresent()) {
+        // probably a bandaid fix
+        Sound sound = null;
+        if (Registry.SOUNDS.match(this.name().toLowerCase()) != null) {
+            sound = Registry.SOUNDS.getOrThrow(NamespacedKey.minecraft(this.name().toLowerCase()));
+        } else {
             for (String legacy : this.legacy) {
-                sound = Enums.getIfPresent(Sound.class, legacy);
-                if (sound.isPresent()) break;
+                if (Registry.SOUNDS.match(legacy.toLowerCase()) != null) {
+                    sound = Registry.SOUNDS.getOrThrow(NamespacedKey.minecraft(legacy.toLowerCase()));
+                    break;
+                }
             }
         }
+        if (sound != null) {
+            CACHE.put(this, sound);
+        }
+        return sound;
+        // sound = Enums.getIfPresent(Sound.class, this.name());
 
-        // Put nulls too, because there's no point of parsing them again if it's going to give us null again.
-        CACHE.put(this, sound);
-        return sound.orNull();
+//        if (!sound.isPresent()) {
+//            for (String legacy : this.legacy) {
+//                sound = Enums.getIfPresent(Sound.class, legacy);
+//                if (sound.isPresent()) break;
+//            }
+//        }
+//        // Put nulls too, because there's no point of parsing them again if it's going to give us null again.
+//        CACHE.put(this, sound);
+//        // return sound.orNull();
+//        return sound;
     }
 
     /**

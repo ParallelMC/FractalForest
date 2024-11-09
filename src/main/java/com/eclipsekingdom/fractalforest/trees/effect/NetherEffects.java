@@ -24,7 +24,7 @@ public class NetherEffects implements IEffects {
                     double offX = TreeMath.randomDouble(-0.5, 0.5);
                     double offY = TreeMath.randomDouble(-0.7, 0.7);
                     double offZ = TreeMath.randomDouble(-0.5, 0.5);
-                    location.getWorld().playEffect(location.clone().add(offX, offY, offZ), Effect.valueOf("COLOURED_DUST"), 1);
+                    // location.getWorld().playEffect(location.clone().add(offX, offY, offZ), Effect.valueOf("COLOURED_DUST"), 1);
                 }
             } else {
                 for (int i = 0; i < 5; i++) {

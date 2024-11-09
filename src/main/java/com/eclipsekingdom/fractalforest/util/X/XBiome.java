@@ -29,11 +29,15 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.commons.lang3.Validate;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
+import org.mozilla.javascript.InterfaceAdapter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.net.InterfaceAddress;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Locale;
@@ -147,7 +151,9 @@ public enum XBiome {
      *
      * @since 1.0.0
      */
-    private static final Cache<XBiome, Optional<Biome>> CACHE = CacheBuilder.newBuilder()
+//    private static final Cache<XBiome, Optional<Biome>> CACHE = CacheBuilder.newBuilder()
+//            .softValues().build();
+    private static final Cache<XBiome, Biome> CACHE = CacheBuilder.newBuilder()
             .softValues().build();
     /**
      * Pre-compiled RegEx pattern.
@@ -245,21 +251,41 @@ public enum XBiome {
     @Nullable
     @SuppressWarnings({"Guava", "OptionalAssignedToNull"})
     public Biome parseBiome() {
-        com.google.common.base.Optional<Biome> cached = CACHE.getIfPresent(this);
-        if (cached != null) return cached.orNull();
-        com.google.common.base.Optional<Biome> biome;
+        // com.google.common.base.Optional<Biome> cached = CACHE.getIfPresent(this);
+        Biome cached = CACHE.getIfPresent(this);
+        // if (cached != null) return cached.orNull();
+        if (cached != null) return cached;
+        // com.google.common.base.Optional<Biome> biome;
 
-        biome = Enums.getIfPresent(Biome.class, this.name());
+        // might be a bandaid fix
 
-        if (!biome.isPresent()) {
+        // biome = Enums.getIfPresent(Biome.class, this.name());
+        Biome biome = null;
+        if (Registry.BIOME.match(this.name().toLowerCase()) != null) {
+            biome = Registry.BIOME.getOrThrow(NamespacedKey.minecraft(this.name().toLowerCase()));
+        } else {
             for (String legacy : this.legacy) {
-                biome = Enums.getIfPresent(Biome.class, legacy);
-                if (biome.isPresent()) break;
+                if (Registry.BIOME.match(legacy.toLowerCase()) != null) {
+                    biome = Registry.BIOME.getOrThrow(NamespacedKey.minecraft(legacy.toLowerCase()));
+                    break;
+                }
             }
         }
+        if (biome != null) {
+            CACHE.put(this, biome);
+        }
+        return biome;
 
-        CACHE.put(this, biome);
-        return biome.orNull();
+//        if (!biome.isPresent()) {
+//            for (String legacy : this.legacy) {
+//                biome = Enums.getIfPresent(Biome.class, legacy);
+//                if (biome.isPresent()) break;
+//            }
+//        }
+//
+//        CACHE.put(this, biome);
+//        // return biome.orNull();
+//        return biome;
     }
 
     /**

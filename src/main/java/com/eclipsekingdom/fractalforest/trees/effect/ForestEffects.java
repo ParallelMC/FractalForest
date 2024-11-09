@@ -27,7 +27,7 @@ public class ForestEffects implements IEffects {
                 double offX = TreeMath.randomDouble(-0.5, 0.5);
                 double offY = TreeMath.randomDouble(-0.7, 0.7);
                 double offZ = TreeMath.randomDouble(-0.5, 0.5);
-                location.getWorld().playEffect(location.clone().add(offX, offY, offZ), Effect.valueOf("HAPPY_VILLAGER"), 1);
+                location.getWorld().playEffect(location.clone().add(offX, offY, offZ), Effect.VILLAGER_PLANT_GROW, 1);
             }
         } else {
             location.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, location, 7, 0.5, 0.7, 0.5);
